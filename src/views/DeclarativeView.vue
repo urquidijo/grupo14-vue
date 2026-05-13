@@ -1,0 +1,50 @@
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+
+const nombre = ref<string>('Estudiante')
+const tecnologia = ref<string>('Vue.js')
+
+const mensaje = computed<string>(() => {
+  return `Hola ${nombre.value}, estás aprendiendo ${tecnologia.value}`
+})
+</script>
+
+<template>
+  <section class="page-header">
+    <span class="badge">Característica 2</span>
+    <h1>Renderizado declarativo</h1>
+    <p>
+      Vue permite declarar qué datos se mostrarán en la interfaz usando una sintaxis clara.
+    </p>
+  </section>
+
+  <section class="demo-layout">
+    <article class="demo-card">
+      <h2>Ejemplo práctico</h2>
+
+      <label>Nombre</label>
+      <input v-model="nombre" placeholder="Escribe tu nombre" />
+
+      <label>Tecnología</label>
+      <input v-model="tecnologia" placeholder="Ej: Vue.js" />
+
+      <div class="preview">
+        <strong>{{ mensaje }}</strong>
+      </div>
+    </article>
+
+    <article class="explanation-card">
+      <h2>¿Qué demuestra?</h2>
+      <p>
+        En lugar de modificar el HTML manualmente, Vue permite declarar los datos en la plantilla.
+        Cuando los datos cambian, el mensaje se vuelve a renderizar automáticamente.
+      </p>
+
+      <div class="code-box">
+        <code v-pre>{{ nombre }}</code>
+        <code v-pre>{{ tecnologia }}</code>
+        <code>v-model="nombre"</code>
+      </div>
+    </article>
+  </section>
+</template>
