@@ -40,10 +40,13 @@ const mensaje = computed<string>(() => {
         Cuando los datos cambian, el mensaje se vuelve a renderizar automáticamente.
       </p>
 
-      <div class="code-box">
-        <code v-pre>{{ nombre }}</code>
-        <code v-pre>{{ tecnologia }}</code>
-        <code>v-model="nombre"</code>
+      <div class="code-box" v-pre>
+        <code>const nombre = ref&lt;string&gt;('Estudiante')</code>
+        <code>const tecnologia = ref&lt;string&gt;('Vue.js')</code>
+        <code>const mensaje = computed(() =&gt; `Hola ${nombre.value}, estás aprendiendo ${tecnologia.value}`)</code>
+        <code>&lt;input v-model="nombre" /&gt;</code>
+        <code>&lt;input v-model="tecnologia" /&gt;</code>
+        <code>&lt;strong&gt;{{ mensaje }}&lt;/strong&gt;</code>
       </div>
     </article>
   </section>

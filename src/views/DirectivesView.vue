@@ -47,14 +47,24 @@ function eliminarTecnologia(index: number): void {
     <article class="explanation-card">
       <h2>¿Qué demuestra?</h2>
       <p>
-        Este ejemplo utiliza varias directivas importantes: v-model conecta el input con los datos,
-        v-for recorre una lista y v-if muestra contenido según una condición.
+        Este ejemplo utiliza varias directivas importantes de Vue.
+        v-model conecta el input con una variable reactiva,
+        v-if muestra la lista solo si existen datos,
+        v-for recorre cada tecnología registrada y @click ejecuta funciones al presionar los botones.
       </p>
 
-      <div class="code-box">
-        <code>v-model="nuevaTecnologia"</code>
-        <code>v-for="tecnologia in tecnologias"</code>
-        <code>v-if="tecnologias.length &gt; 0"</code>
+      <div class="code-box" v-pre>
+        <code>const nuevaTecnologia = ref&lt;string&gt;('')</code>
+        <code>const tecnologias = ref&lt;string[]&gt;(['Vue 3', 'TypeScript', 'Router'])</code>
+
+        <code>&lt;input v-model="nuevaTecnologia" /&gt;</code>
+        <code>&lt;button @click="agregarTecnologia"&gt;Agregar&lt;/button&gt;</code>
+
+        <code>&lt;ul v-if="tecnologias.length &gt; 0"&gt;</code>
+        <code>&lt;li v-for="(tecnologia, index) in tecnologias" :key="tecnologia"&gt;</code>
+        <code>&lt;span&gt;{{ tecnologia }}&lt;/span&gt;</code>
+        <code>&lt;button @click="eliminarTecnologia(index)"&gt;Eliminar&lt;/button&gt;</code>
+        <code>&lt;p v-else&gt;No hay tecnologías registradas.&lt;/p&gt;</code>
       </div>
     </article>
   </section>

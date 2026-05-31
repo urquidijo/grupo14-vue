@@ -41,14 +41,8 @@ const ejemplos = [
     </p>
 
     <div class="features-grid small">
-      <FeatureCard
-        v-for="item in ejemplos"
-        :key="item.titulo"
-        :titulo="item.titulo"
-        :descripcion="item.descripcion"
-        :ruta="item.ruta"
-        :etiqueta="item.etiqueta"
-      />
+      <FeatureCard v-for="item in ejemplos" :key="item.titulo" :titulo="item.titulo" :descripcion="item.descripcion"
+        :ruta="item.ruta" :etiqueta="item.etiqueta" />
     </div>
   </section>
 
@@ -56,12 +50,47 @@ const ejemplos = [
     <h2>¿Qué demuestra?</h2>
     <p>
       En Vue, un componente puede recibir datos mediante propiedades y mostrarse varias veces.
-      Esto mejora la organización del proyecto y evita repetir código innecesario.
+      En este ejemplo, la vista principal recorre una lista de datos y envía esa información
+      al componente FeatureCard.vue mediante props.
     </p>
 
-    <div class="code-box">
-      <code>&lt;FeatureCard titulo="..." descripcion="..." /&gt;</code>
+    <h3>Vista principal: ComponentesView.vue</h3>
+    <div class="code-box" v-pre>
+      <code>import FeatureCard from '../components/FeatureCard.vue'</code>
+
+      <code>const ejemplos = [{ titulo: 'Tarjeta reutilizable', descripcion: '...', ruta: '/componentes', etiqueta: 'Componente' }]</code>
+
+      <code>&lt;FeatureCard</code>
+      <code>  v-for="item in ejemplos"</code>
+      <code>  :key="item.titulo"</code>
+      <code>  :titulo="item.titulo"</code>
+      <code>  :descripcion="item.descripcion"</code>
+      <code>  :ruta="item.ruta"</code>
+      <code>  :etiqueta="item.etiqueta"</code>
+      <code>/&gt;</code>
+    </div>
+
+    <h3>Componente reutilizable: FeatureCard.vue</h3>
+    <div class="code-box" v-pre>
+      <code>&lt;script setup lang="ts"&gt;</code>
+      <code>interface Props {</code>
+      <code>  titulo: string</code>
+      <code>  descripcion: string</code>
+      <code>  ruta: string</code>
+      <code>  etiqueta: string</code>
+      <code>}</code>
+
       <code>defineProps&lt;Props&gt;()</code>
+      <code>&lt;/script&gt;</code>
+
+      <code>&lt;template&gt;</code>
+      <code>  &lt;RouterLink :to="ruta" class="feature-card"&gt;</code>
+      <code>    &lt;span class="feature-tag"&gt;{{ etiqueta }}&lt;/span&gt;</code>
+      <code>    &lt;h3&gt;{{ titulo }}&lt;/h3&gt;</code>
+      <code>    &lt;p&gt;{{ descripcion }}&lt;/p&gt;</code>
+      <code>    &lt;strong&gt;Ver ejemplo →&lt;/strong&gt;</code>
+      <code>  &lt;/RouterLink&gt;</code>
+      <code>&lt;/template&gt;</code>
     </div>
   </section>
 </template>

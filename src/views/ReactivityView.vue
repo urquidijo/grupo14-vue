@@ -50,9 +50,11 @@ function reiniciar(): void {
         presiona un botón, el dato cambia y Vue actualiza la vista automáticamente.
       </p>
 
-      <div class="code-box">
+      <div class="code-box" v-pre>
         <code>const contador = ref&lt;number&gt;(0)</code>
         <code>const estado = ref&lt;string&gt;('Valor inicial')</code>
+        <code>&lt;p class="counter"&gt;{{ contador }}&lt;/p&gt;</code>
+        <code>&lt;p class="result"&gt;Estado: {{ estado }}&lt;/p&gt;</code>
         <code>@click="aumentar"</code>
         <code>@click="disminuir"</code>
       </div>
