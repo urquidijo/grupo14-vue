@@ -37,7 +37,7 @@ async function fetchBreeds() {
     // Las razas vienen como claves de un objeto
     breedsList.value = Object.keys(response.data.message)
     if (breedsList.value.length > 0) {
-      selectedBreed.value = breedsList.value[0]
+      selectedBreed.value = breedsList.value[0] ?? ''
     }
   } catch (error) {
     console.error('Error fetching breeds:', error)
