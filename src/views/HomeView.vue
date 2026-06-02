@@ -37,6 +37,12 @@ const caracteristicas = [
     descripcion: 'Vue Router permite navegar entre pantallas y Pinia maneja estado global.',
     ruta: '/router-pinia',
     etiqueta: 'Ecosistema Vue'
+  },
+  {
+    titulo: 'Consumo de APIs',
+    descripcion: 'Integración con servicios externos usando Fetch, Axios y VueUse.',
+    ruta: '/consumo-api',
+    etiqueta: 'Peticiones HTTP'
   }
 ]
 </script>

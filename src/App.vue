@@ -17,6 +17,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <RouterLink to="/reactividad">Reactividad</RouterLink>
       <RouterLink to="/directivas">Directivas</RouterLink>
       <RouterLink to="/router-pinia">Router y Pinia</RouterLink>
+      <RouterLink to="/consumo-api">Consumo de APIs</RouterLink>
     </nav>
   </header>
 

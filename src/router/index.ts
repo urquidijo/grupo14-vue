@@ -7,6 +7,7 @@ import DirectivesView from '../views/DirectivesView.vue'
 import ComponentsView from '../views/ComponentsView.vue'
 import EventsView from '../views/EventsView.vue'
 import RouterPiniaView from '../views/RouterPiniaView.vue'
+import ApiView from '../views/ApiView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,7 +18,8 @@ const router = createRouter({
     { path: '/directivas', name: 'directivas', component: DirectivesView },
     { path: '/componentes', name: 'componentes', component: ComponentsView },
     { path: '/eventos', name: 'eventos', component: EventsView },
-    { path: '/router-pinia', name: 'routerPinia', component: RouterPiniaView }
+    { path: '/router-pinia', name: 'routerPinia', component: RouterPiniaView },
+    { path: '/consumo-api', name: 'consumoApi', component: ApiView }
   ]
 })
 
