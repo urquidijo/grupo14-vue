@@ -275,9 +275,11 @@ button.danger:hover {
   margin-top: 18px;
 }
 
-.code-box {
-  background: #111827;
-  color: #d1fae5;
+.code-box { 
+  background: #fafafa;
+  font-weight: bold;
+  font-size: larger;
+  color: #111827;
   border-radius: 16px;
   padding: 18px;
   margin-top: 18px;
